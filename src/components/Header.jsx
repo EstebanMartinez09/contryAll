@@ -16,21 +16,19 @@ export const Header = () => {
   }, [isDark]);
 
   return (
-    <header className="bg-white shadow-md mb-4 nonito-sans flex justify-between py-8 px-4 dark:bg-dark-blue dark:text-white">
+    <header className="bg-white shadow-md mb-4 nonito-sans flex justify-between py-8 px-4 dark:bg-dark-blue dark:text-white transition-colors lg:px-16">
       <h1 className="font-bold">Where in the world?</h1>
       <button
         onClick={handleToogleTheme}
         className="flex font-semibold items-center  gap-2"
       >
-        {
-          isDark ? (
-            <IconSun size={20} strokeWidth={1.6} />
-            ): (
-            <IconMoon size={20} strokeWidth={1.6} />
-          )
-        }
-        
-        <p>Dark Mode</p>
+        {isDark ? (
+          <IconSun size={20} strokeWidth={1.6} />
+        ) : (
+          <IconMoon size={20} strokeWidth={1.6} />
+        )}
+
+        <p>{isDark ? "Light Mode" : "Dark Mode"}</p>
       </button>
     </header>
   );

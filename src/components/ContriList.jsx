@@ -1,10 +1,10 @@
 export const ContriList = ({ allContries }) => {
   return (
-    <section className=" grid gap-10 place-content-center grid-cols-[repeat(auto-fill,_minmax(240px,_1fr))] p-8">
+    <section className=" grid gap-10 place-content-center grid-cols-[repeat(auto-fill,_minmax(240px,_1fr))] py-8 px-8 md:px-0 ">
       {allContries.map((contry) => {
         return (
           <article
-            className="bg-white shadow-md shadow-black/5 rounded-md overflow-hidden  dark:bg-dark-blue  dark:text-white"
+            className="bg-white shadow-md shadow-black/5 rounded-md overflow-hidden  dark:bg-dark-blue  dark:text-white transition-colors"
             key={contry.name.common}
           >
             <header className="shadow-md shadow-black/5 h-[160px]">

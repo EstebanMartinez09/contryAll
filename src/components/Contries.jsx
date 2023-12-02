@@ -33,22 +33,22 @@ export const Contries = () => {
   }, []);
 
   return (
-    <section className="p-4">
-      <form onSubmit={handleSubmit} className="grid gap-8">
-        <div className="bg-white shadow-md shadow-black/5 flex gap-2 p-3 items-center rounded-md text-dark-gray dark:bg-dark-blue">
+    <section className="p-4 max-w-[1120px] mx-auto">
+      <form onSubmit={handleSubmit} className="grid gap-8 md:flex md:justify-between mb-4 ">
+        <div className="bg-white shadow-md shadow-black/5 flex gap-2 p-3 items-center rounded-md text-dark-gray dark:bg-dark-blue transition-colors">
           <button type="submit" className="outline-none">
             <IconSearch />
           </button>
           <input
             placeholder="Search for a country..."
-            className="w-full outline-none dark:bg-dark-blue  dark:text-white"
+            className="w-full outline-none dark:bg-dark-blue  dark:text-white transition-colors md:w-[340px]"
             type="text"
             name="search"
           />
         </div>
         <select
           onChange={handleOnChangeRegion}
-          className="bg-white outline-none shadow-md shadow-black/5 rounded-md p-3 justify-self-start  dark:bg-dark-blue  dark:text-white"
+          className="bg-white outline-none shadow-md shadow-black/5 rounded-md p-3 justify-self-start  dark:bg-dark-blue  dark:text-white transition-colors"
         >
           <option value="">All Continents</option>
           <option>Africa</option>
@@ -58,6 +58,9 @@ export const Contries = () => {
           <option>Oceania</option>
         </select>
       </form>
+
+      <span className=" font-bold  dark:text-white transition-colors">{contriesByRegion.length} Contries</span>
+
       <ContriList allContries={contriesByRegion} />
       {contriesByRegion.length === 0 && (
         <p className="text-center font-semibold text-2xl">No contries found</p>
